@@ -1,0 +1,46 @@
+host: campus-053-209.ucdavis.edu
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job             count
+------------  -------
+all                 1
+count               1
+create_input        1
+total               3
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Nov 13 09:56:51 2024]
+localrule create_input:
+    output: exampleText.txt
+    jobid: 2
+    reason: Missing output files: exampleText.txt
+    resources: tmpdir=/var/folders/2_/y7r04t4s23b_ctd9p08_fl600000gn/T
+
+[Wed Nov 13 09:56:51 2024]
+Finished job 2.
+1 of 3 steps (33%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Nov 13 09:56:51 2024]
+localrule count:
+    input: exampleText.txt
+    output: wordCount.txt
+    jobid: 1
+    reason: Missing output files: wordCount.txt; Input files updated by another job: exampleText.txt
+    resources: tmpdir=/var/folders/2_/y7r04t4s23b_ctd9p08_fl600000gn/T
+
+Waiting at most 5 seconds for missing files.
+MissingOutputException in rule count in file /Users/rohanmarde/Documents/CollegeStuff/research/LaSalleLab/snakemakePractice/Snakefile, line 11:
+Job 1  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+wordCount.txt (missing locally, parent dir not present)
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-11-13T095651.960102.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

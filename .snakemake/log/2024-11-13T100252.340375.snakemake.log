@@ -1,0 +1,54 @@
+host: campus-053-209.ucdavis.edu
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job             count
+------------  -------
+all                 1
+count               1
+create_input        1
+total               3
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Nov 13 10:02:52 2024]
+localrule create_input:
+    output: exampleText.txt
+    jobid: 2
+    reason: Code has changed since last execution
+    resources: tmpdir=/var/folders/2_/y7r04t4s23b_ctd9p08_fl600000gn/T
+
+[Wed Nov 13 10:02:52 2024]
+Finished job 2.
+1 of 3 steps (33%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Nov 13 10:02:52 2024]
+localrule count:
+    input: exampleText.txt
+    output: wordCount.txt
+    jobid: 1
+    reason: Missing output files: wordCount.txt; Input files updated by another job: exampleText.txt
+    resources: tmpdir=/var/folders/2_/y7r04t4s23b_ctd9p08_fl600000gn/T
+
+[Wed Nov 13 10:02:52 2024]
+Finished job 1.
+2 of 3 steps (67%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Nov 13 10:02:52 2024]
+localrule all:
+    input: wordCount.txt
+    jobid: 0
+    reason: Input files updated by another job: wordCount.txt
+    resources: tmpdir=/var/folders/2_/y7r04t4s23b_ctd9p08_fl600000gn/T
+
+[Wed Nov 13 10:02:52 2024]
+Finished job 0.
+3 of 3 steps (100%) done
+Complete log: .snakemake/log/2024-11-13T100252.340375.snakemake.log
